@@ -20,22 +20,6 @@ The trained LSTM model is exported to ONNX and converted to fixed-point HLS C++ 
 | Quantized (INT8) | ~80 us | ~6.3 % |
 | FPGA HLS (C-sim) | ~2 us | ~6.5 % |
 
-## Project Structure
-
-.
-├── backbones/
-│   └── my_dpd_backbone.py       # MyMLPDPD and MyLSTMDPD model definitions
-├── datasets/
-│   └── DPA_200MHz/              # Real PA measurement data (from dpdOpen)
-├── fpga_inference/
-│   ├── export_onnx.py           # Export trained .pth -> ONNX
-│   ├── quantize_model.py        # INT8 post-training quantization
-│   ├── hls4ml_convert.py        # ONNX -> HLS C++ via hls4ml (Artix-7)
-│   ├── latency_benchmark.py     # CPU vs quantized latency comparison
-|
-├── run_my_dpd.py                # Training and evaluation script
-├── results_my_dpd/              # Output plots and saved model weights
-└── README.md
 
 ## Setup
 ```bash
