@@ -69,9 +69,9 @@ python fpga_inference/hls4ml_convert.py
 HLS project and synthesis report are written to `fpga_inference/hls_project/`.
 
 ## Models
-**MyLSTMDPD** — Bidirectional LSTM with single-head scaled dot-product attention. Two stacked LSTM layers capture long-range PA memory effects; attention aggregates across the sequence before the output projection.
+**MyLSTMDPD**: Bidirectional LSTM with single-head scaled dot-product attention. Two stacked LSTM layers capture long-range PA memory effects; attention aggregates across the sequence before the output projection.
 
-**MyMLPDPD** — Feedforward network with residual blocks. Flattens a sliding window of I/Q samples and passes them through stacked ResBlocks with LayerNorm and GELU activations.
+**MyMLPDPD**: Feedforward network with residual blocks. Flattens a sliding window of I/Q samples and passes them through stacked ResBlocks with LayerNorm and GELU activations.
 
 Both models use the **indirect learning architecture**: the DPD is trained to approximate the inverse PA mapping (PA output → PA input), so that when composed with the real PA, the combined response is approximately linear.
 
